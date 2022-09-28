@@ -1,14 +1,17 @@
 mod database;
 
-use rocket::{launch, get, routes};
+use rocket::{launch, fs::FileServer, get, routes};
 use database::establish_connection;
 
 #[get("/")]
-fn index() -> &'static str {
-    "Hello, World!"
+fn hello_world() -> &'static str {
+    "hello, world!"
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().manage(establish_connection()).mount("/", routes![index])
+    rocket::build()
+        .manage(establish_connection())
+        .mount("/", FileServer::from("../ui/dist"))
+        .mount("/api", routes![hello_world])
 }
