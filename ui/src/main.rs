@@ -5,11 +5,14 @@ mod pages;
 mod components;
 
 use components::AppContainer;
+use pages::Home;
 
 #[derive(PartialEq, Clone, Routable)]
 enum Route {
     #[at("/")]
     Home,
+    #[at("help")]
+    Help,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -22,9 +25,7 @@ fn switch(routes: &Route) -> Html {
     match routes.clone() {
         Route::Home => {
             html!(
-                <AppContainer>
-                    <p>{"Hello, World!"}</p>
-                </AppContainer>
+                <Home/>
             )
         },
         Route::NotFound => {
@@ -32,6 +33,12 @@ fn switch(routes: &Route) -> Html {
                 <AppContainer>
                 </AppContainer>
             )
+        },
+        Route::Help => {
+            html!{
+                <AppContainer>
+                </AppContainer>
+            }
         }
     }
 }
