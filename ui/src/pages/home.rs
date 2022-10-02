@@ -12,6 +12,12 @@ pub fn home() -> Html {
     html!{
         <AppContainer>
             <NavBar/>
+            <div class="grid grid-cols-2">
+                <div>
+                </div>
+                <div>
+                </div>
+            </div>
         </AppContainer>
     }
 }
