@@ -11,8 +11,10 @@ use pages::Home;
 enum Route {
     #[at("/")]
     Home,
-    #[at("help")]
+    #[at("/help")]
     Help,
+    #[at("/new")]
+    NewPoll,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -35,6 +37,12 @@ fn switch(routes: &Route) -> Html {
             )
         },
         Route::Help => {
+            html!{
+                <AppContainer>
+                </AppContainer>
+            }
+        },
+        Route::NewPoll => {
             html!{
                 <AppContainer>
                 </AppContainer>
