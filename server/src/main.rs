@@ -21,5 +21,5 @@ fn rocket() -> _ {
     rocket::build()
         .manage(establish_connection())
         .register("/", catchers![fallback_to_index])
-        .mount("/", FileServer::from("../ui/dist"))
+        .mount("/", FileServer::from("../dist"))
 }
