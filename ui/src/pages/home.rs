@@ -8,7 +8,8 @@ use yew_router::prelude::*;
 
 use crate::components::{
     NavBar,
-    AppContainer
+    AppContainer,
+    FeatureOverview
 };
 
 use crate::Route;
@@ -28,13 +29,16 @@ pub fn home() -> Html {
                         {"the easy way."}
                         <div class=" mt-1 text-xl text-gray-400">{"Quickly find the perfect Day and Time"}</div>
                         <div class="space-x-3">
-                            <Link<Route> classes={classes!("rounded", "hover:bg-sky-700", "transition", "text-lg", "bg-sky-500", "px-5", "py-3", "font-semibold", "text-white", "shadow-sm")} to={Route::NewPoll}> {"Start Planning"}</Link<Route>>
-                            <Link<Route> classes={classes!("rounded", "hover:bg-gray-700", "transition", "text-lg", "bg-gray-500", "px-5", "py-3", "font-semibold", "text-white", "shadow-sm")} to={Route::Help}> {"Getting Started"}</Link<Route>>
+                            <Link<Route> classes={classes!("rounded", "hover:bg-sky-400", "transition", "text-lg", "bg-sky-500", "px-5", "py-3", "font-semibold", "text-white", "shadow-sm")} to={Route::NewPoll}> {"Start Planning"}</Link<Route>>
+                            <Link<Route> classes={classes!("rounded", "hover:bg-gray-400", "transition", "text-lg", "bg-gray-500", "px-5", "py-3", "font-semibold", "text-white", "shadow-sm")} to={Route::Help}> {"Getting Started"}</Link<Route>>
                         </div>
                     </h1>                    
                 </div>
                 <div>
                 </div>
+            </div>
+            <div class="pl-24 font-bold my-10 mx-auto">
+                    <FeatureOverview/>
             </div>
         </AppContainer>
     }

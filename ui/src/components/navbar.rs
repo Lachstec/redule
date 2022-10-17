@@ -21,7 +21,7 @@ pub fn navbar(_props: &NavBarProps) -> Html {
             <nav class="sticky top-0 z-50">
                 <div class="w-screen mx-auto px-4 py-2">
                     <div class="flex items-center justify-between h-16">
-                        <span class="text-4xl text-gray-900 font-semibold italic text-sky-500 pl-24">{"Redule"}</span>
+                        <span class="text-4xl font-semibold italic text-sky-500 pl-24">{"Redule"}</span>
                         <div class="flex space-x-10 text-gray-900 text-xl">
                             <Link<Route> classes={classes!("hover:text-sky-500", "transition", "ease-in-out")} to={Route::Home}>{"Home"}</Link<Route>>
                             <Link<Route> classes={classes!("hover:text-sky-500", "transition", "ease-in-out")} to={Route::Help}>{"Help"}</Link<Route>>
